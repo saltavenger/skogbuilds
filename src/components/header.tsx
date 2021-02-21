@@ -1,4 +1,14 @@
-import { AppBar, Tab, Tabs, Toolbar, Box, IconButton, Drawer, Divider } from "@material-ui/core"
+import {
+  AppBar,
+  Tab,
+  Tabs,
+  Toolbar,
+  Box,
+  Grid,
+  IconButton,
+  Drawer,
+  Divider
+} from "@material-ui/core"
 import { Link, navigate } from "gatsby"
 import clsx from 'clsx';
 import { Menu, ChevronLeft, Home} from '@material-ui/icons'
@@ -6,7 +16,7 @@ import PropTypes from "prop-types"
 import React from "react"
 import {makeStyles, Theme, createStyles} from '@material-ui/core/styles'
 
-const drawerWidth = 240;
+const drawerWidth = 340;
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -51,7 +61,7 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-const Header = ({ siteTitle, tab, onDrawerToggle }) => {
+const Header = ({ tab, onDrawerToggle }) => {
   const [value, setValue] = React.useState<boolean|number>(tab);
   const [open, setOpen] = React.useState(false);
   const classes = useStyles();
@@ -78,45 +88,50 @@ const Header = ({ siteTitle, tab, onDrawerToggle }) => {
   };
 
   return (
-    <header>
-      <AppBar position="fixed" className={clsx(classes.appBar, { [classes.appBarShift]: open })}>
+    <Box>
+      <AppBar color="transparent" position="fixed" className={clsx(classes.appBar, { [classes.appBarShift]: open })} style={{minHeight: '77px'}}>
         <Toolbar>
-          <Box display={{xs: 'none', md: 'flex'}} width={1} alignItems="center">
-            <Box flexGrow={1}>
-              <h1 style={{ margin: 0 }}>
-                <Link
-                  to="/"
-                  onClick={handleHome}
-                  style={{
-                    color: `white`,
-                    textDecoration: `none`,
-                  }}>
-                  {siteTitle}
-                </Link>
-              </h1>
-            </Box>
-            <Box alignSelf="flex-end">
-              <Tabs value={value}>
-                <Tab component="a"
-                  id="nav-tab-0"
-                  aria-controls="nav-tabpanel-0"
-                  onClick={e => handleClick(e, '/projects')}
-                  label="Projects"
-                  href="/projects"/>
-                <Tab component="a"
-                  id="nav-tab-1"
-                  aria-controls="nav-tabpanel-1"
-                  onClick={e => handleClick(e, '/testimonials')}
-                  label="Testimonials"
-                  href="/testimonals"/>
-                <Tab component="a"
-                  id="nav-tab-2"
-                  aria-controls="nav-tabpanel-2"
-                  onClick={e => handleClick(e, '/quote')}
-                  label="Get a quote"
-                  href="/quote"/>
-              </Tabs>
-            </Box>
+          <Box display={{xs: 'none', md: 'block'}} width={1}>
+            <Grid container spacing={1} justify="space-between" alignItems="center" wrap="nowrap">
+              <Grid item>
+                <h1 style={{marginBottom: 0, padding: '10px', whiteSpace: 'nowrap'}}>
+                  <Link
+                      to="/"
+                      onClick={handleHome}
+                      style={{
+                        color: `#1b1b1b`,
+                        textDecoration: `none`,
+                      }}>
+                      <Box component="span" textAlign="center">
+                        <Box component="span" fontFamily="'Tajawal', sans-serif" fontWeight={600} fontSize={30} display="block" letterSpacing={3}>JAMES ARESKOG</Box>
+                        <Box component="span" fontFamily="'Tajawal', sans-serif" fontWeight={200} fontSize={22} display="block">Carpentry &amp; Construction</Box>
+                      </Box>
+                  </Link>
+                </h1>
+              </Grid>
+              <Grid item>
+                <Tabs value={value}>
+                  <Tab component="a"
+                    id="nav-tab-0"
+                    aria-controls="nav-tabpanel-0"
+                    onClick={e => handleClick(e, '/projects')}
+                    label="Projects"
+                    href="/projects"/>
+                  <Tab component="a"
+                    id="nav-tab-1"
+                    aria-controls="nav-tabpanel-1"
+                    onClick={e => handleClick(e, '/testimonials')}
+                    label="Testimonials"
+                    href="/testimonals"/>
+                  <Tab component="a"
+                    id="nav-tab-2"
+                    aria-controls="nav-tabpanel-2"
+                    onClick={e => handleClick(e, '/quote')}
+                    label="Get a quote"
+                    href="/quote"/>
+                </Tabs>
+              </Grid>
+            </Grid>
           </Box>
           <Box display={{xs: 'block', md: 'none'}}>
             <IconButton
@@ -138,20 +153,25 @@ const Header = ({ siteTitle, tab, onDrawerToggle }) => {
         classes={{
           paper: classes.drawerPaper,
         }}>
-        <div className={classes.drawerHeader}>
-          <Box flexGrow={1} p={2}>
-            <IconButton
-              color="inherit"
-              aria-label="Home"
-              onClick={handleHome}
-              edge="start">
-                  <Home />
-            </IconButton>
+        <Box className={classes.drawerHeader}>
+          <Box flexGrow={1} p={1.5}>
+            <Link
+                to="/"
+                onClick={handleHome}
+                style={{
+                  color: '#1b1b1b',
+                  textDecoration: `none`,
+                }}>
+                <Box component="span" textAlign="center">
+                  <Box component="span" fontFamily="'Tajawal', sans-serif" fontWeight={600} fontSize={30} display="block" letterSpacing={3}>JAMES ARESKOG</Box>
+                  <Box component="span" fontFamily="'Tajawal', sans-serif" fontWeight={200} fontSize={22} display="block">Carpentry &amp; Construction</Box>
+                </Box>
+            </Link>
           </Box>
           <IconButton onClick={handleDrawerClose}>
             <ChevronLeft />
           </IconButton>
-        </div>
+        </Box>
         <Divider />
         <Tabs value={value} orientation="vertical">
           <Tab component="a"
@@ -174,18 +194,16 @@ const Header = ({ siteTitle, tab, onDrawerToggle }) => {
             href="/quote"/>
         </Tabs>
       </Drawer>
-    </header>
+    </Box>
   );
 }
 
 Header.propTypes = {
-  siteTitle: PropTypes.string,
   tab: PropTypes.any,
   onDrawerToggle: PropTypes.func
 }
 
 Header.defaultProps = {
-  siteTitle: `James Areskog`,
   tab: false
 }
 
