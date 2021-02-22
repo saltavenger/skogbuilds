@@ -82,6 +82,17 @@ const theme = createMuiTheme({
         fontFamily: "'Tajawal', sans-serif",
         fontSize: 20
       }
+    },
+    MuiPaper: {
+      root: {
+        backgroundColor: "#f8f6f2"
+      }
+    },
+    MuiLink: {
+      root: {
+        fontFamily: "'Noto Serif', serif",
+        fontSize: 16
+      }
     }
   }
 });

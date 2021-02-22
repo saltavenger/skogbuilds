@@ -89,7 +89,7 @@ const Header = ({ tab, onDrawerToggle }) => {
 
   return (
     <Box>
-      <AppBar color="transparent" position="fixed" className={clsx(classes.appBar, { [classes.appBarShift]: open })} style={{minHeight: '77px'}}>
+      <AppBar color="inherit" position="fixed" className={clsx(classes.appBar, { [classes.appBarShift]: open })} style={{minHeight: '77px'}}>
         <Toolbar>
           <Box display={{xs: 'none', md: 'block'}} width={1}>
             <Grid container spacing={1} justify="space-between" alignItems="center" wrap="nowrap">
