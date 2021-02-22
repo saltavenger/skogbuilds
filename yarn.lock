@@ -1033,11 +1033,6 @@
   resolved "https://registry.yarnpkg.com/@fontsource/noto-serif/-/noto-serif-4.2.1.tgz#bda5354a94aa66da098c07e31f0cc239c49335e6"
   integrity sha512-T6RiON2Bpakh+kHtFD6KjRsO+ZQ8444GSoXEWXxbhFz3Y5oUtWiEyMGma73A7zWA69fi3fqJu/GIH3iEGBFddA==
 
-"@fontsource/tajawal@^4.2.1":
-  version "4.2.1"
-  resolved "https://registry.yarnpkg.com/@fontsource/tajawal/-/tajawal-4.2.1.tgz#d6ce2556cbea8bffff2f37d854f1af13b0bd63c2"
-  integrity sha512-NJ+cLKtUeArIQnNCFJ0JZjN+4jlxsHArTsnYRlIt1FeqLRNVipJPkx6ep/yzEoDDcaLrZyXVFrVDwR8Sxyrw3w==
-
 "@graphql-tools/batch-execute@^7.0.0":
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/@graphql-tools/batch-execute/-/batch-execute-7.0.0.tgz#e79d11bd5b39f29172f6ec2eafa71103c6a6c85b"

@@ -7,7 +7,6 @@
   "dependencies": {
     "@fontsource/heebo": "^4.2.1",
     "@fontsource/noto-serif": "^4.2.1",
-    "@fontsource/tajawal": "^4.2.1",
     "@material-ui/core": "^4.11.3",
     "@material-ui/icons": "^4.11.2",
     "gatsby": "^2.26.1",
