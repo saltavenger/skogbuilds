@@ -7,7 +7,7 @@ import React from "react"
 const Footer = ({isOpen, classData, siteTitle}) => {
     const classes = classData;
     return (
-        <footer style={{ marginTop: `0`, background: '#5d4e32'}} className={clsx(classes.content, {[classes.contentShift]: isOpen})}>
+        <Box component="footer" mt={0} bgcolor="primary.main" className={clsx(classes.content, {[classes.contentShift]: isOpen})}>
             <Container>
                 <Box p={2}>
                     <Box display="flex" justifyContent="flex-end" mb={2}>
@@ -22,7 +22,7 @@ const Footer = ({isOpen, classData, siteTitle}) => {
                     </Box>
                 </Box>
             </Container>
-        </footer>
+        </Box>
     );
 }
 

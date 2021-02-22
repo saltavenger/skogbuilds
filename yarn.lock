@@ -1023,6 +1023,11 @@
     ts-node "^9"
     tslib "^2"
 
+"@fontsource/heebo@^4.2.1":
+  version "4.2.1"
+  resolved "https://registry.yarnpkg.com/@fontsource/heebo/-/heebo-4.2.1.tgz#790a8c67f09435418763db01d9d5d961f570bf85"
+  integrity sha512-acbf9U24QUO3b1DN1uqncIr/EP1KdV8FGFwLh+2bBIhPm+egFzjVPVohHdfbMQ3NCX2EhYu3rPGbceWjnkbq7w==
+
 "@fontsource/noto-serif@^4.2.1":
   version "4.2.1"
   resolved "https://registry.yarnpkg.com/@fontsource/noto-serif/-/noto-serif-4.2.1.tgz#bda5354a94aa66da098c07e31f0cc239c49335e6"

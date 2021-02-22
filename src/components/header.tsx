@@ -89,12 +89,12 @@ const Header = ({ tab, onDrawerToggle }) => {
 
   return (
     <Box>
-      <AppBar color="inherit" position="fixed" className={clsx(classes.appBar, { [classes.appBarShift]: open })} style={{minHeight: '77px'}}>
+      <AppBar color="inherit" position="fixed" className={clsx(classes.appBar, { [classes.appBarShift]: open })} style={{minHeight: "64px"}}>
         <Toolbar>
           <Box display={{xs: 'none', md: 'block'}} width={1}>
-            <Grid container spacing={1} justify="space-between" alignItems="center" wrap="nowrap">
+            <Grid container spacing={2} justify="space-between" alignItems="center" wrap="nowrap">
               <Grid item>
-                <h1 style={{marginBottom: 0, padding: '10px', whiteSpace: 'nowrap'}}>
+                <Box component="h1" mb={0} style={{whiteSpace: 'nowrap'}}>
                   <Link
                       to="/"
                       onClick={handleHome}
@@ -103,11 +103,11 @@ const Header = ({ tab, onDrawerToggle }) => {
                         textDecoration: `none`,
                       }}>
                       <Box component="span" textAlign="center">
-                        <Box component="span" fontFamily="'Tajawal', sans-serif" fontWeight={600} fontSize={30} display="block" letterSpacing={3}>JAMES ARESKOG</Box>
-                        <Box component="span" fontFamily="'Tajawal', sans-serif" fontWeight={200} fontSize={22} display="block">Carpentry &amp; Construction</Box>
+                        <Box component="span" fontFamily="'Heebo', sans-serif" fontWeight={600} fontSize={26} display="block" letterSpacing={3}>JAMES ARESKOG</Box>
+                        <Box component="span" fontFamily="'Heebo', sans-serif" fontWeight={200} fontSize={20} display="block">Carpentry &amp; Construction</Box>
                       </Box>
                   </Link>
-                </h1>
+                </Box>
               </Grid>
               <Grid item>
                 <Tabs value={value}>
@@ -154,7 +154,7 @@ const Header = ({ tab, onDrawerToggle }) => {
           paper: classes.drawerPaper,
         }}>
         <Box className={classes.drawerHeader}>
-          <Box flexGrow={1} p={1.5}>
+          <Box flexGrow={1} p={0.8}>
             <Link
                 to="/"
                 onClick={handleHome}
@@ -163,8 +163,8 @@ const Header = ({ tab, onDrawerToggle }) => {
                   textDecoration: `none`,
                 }}>
                 <Box component="span" textAlign="center">
-                  <Box component="span" fontFamily="'Tajawal', sans-serif" fontWeight={600} fontSize={30} display="block" letterSpacing={3}>JAMES ARESKOG</Box>
-                  <Box component="span" fontFamily="'Tajawal', sans-serif" fontWeight={200} fontSize={22} display="block">Carpentry &amp; Construction</Box>
+                  <Box component="span" fontFamily="'Heebo', sans-serif" fontWeight={600} fontSize={26} display="block" letterSpacing={3}>JAMES ARESKOG</Box>
+                  <Box component="span" fontFamily="'Heebo', sans-serif" fontWeight={200} fontSize={20} display="block">Carpentry &amp; Construction</Box>
                 </Box>
             </Link>
           </Box>

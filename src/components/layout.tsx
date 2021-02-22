@@ -15,13 +15,13 @@ import {makeStyles, Theme, createStyles, createMuiTheme, ThemeProvider} from '@m
 import Header from "./header"
 import Footer from "./footer"
 import "./layout.css"
-import "@fontsource/tajawal"
+import "@fontsource/heebo"
 import "@fontsource/noto-serif"
 
 const theme = createMuiTheme({
   palette: {
     primary:{ 
-      main: '#2c3a81'
+      main: '#234196'
     },
     secondary: {
       main: '#5d4e32'
@@ -32,26 +32,29 @@ const theme = createMuiTheme({
     }
   },
   typography: {
-    fontFamily: "'Tajawal', sans-serif",
+    fontFamily: "'Heebo', sans-serif",
     h1: {
-      fontFamily: "'Tajawal', sans-serif",
+      fontFamily: "'Heebo', sans-serif",
       fontWeight: 600,
-      fontSize: 30
+      fontSize: 28
     },
     h2: {
-      fontFamily: "'Tajawal', sans-serif",
+      fontSize: 40,
+      fontFamily: "'Heebo', sans-serif",
     },
     h3: {
-      fontFamily: "'Tajawal', sans-serif",
+      fontSize: 20,
+      fontWeight: 600,
+      fontFamily: "'Heebo', sans-serif",
     },
     h4: {
-      fontFamily: "'Tajawal', sans-serif",
+      fontFamily: "'Heebo', sans-serif",
     },
     h5: {
-      fontFamily: "'Tajawal', sans-serif",
+      fontFamily: "'Heebo', sans-serif",
     },
     h6: {
-      fontFamily: "'Tajawal', sans-serif",
+      fontFamily: "'Heebo', sans-serif",
     },
     subtitle1: {
       fontFamily: "'Noto Serif', serif"
@@ -79,8 +82,8 @@ const theme = createMuiTheme({
   overrides: {
     MuiTab: {
       root: {
-        fontFamily: "'Tajawal', sans-serif",
-        fontSize: 20
+        fontFamily: "'Heebo', sans-serif",
+        fontSize: 18
       }
     },
     MuiPaper: {
@@ -91,7 +94,7 @@ const theme = createMuiTheme({
     MuiLink: {
       root: {
         fontFamily: "'Noto Serif', serif",
-        fontSize: 16
+        fontSize: 14
       }
     }
   }
@@ -136,11 +139,11 @@ const Layout = ({ children, tab }) => {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <Box style={{display: "grid", gridTemplateColumns: "1fr", gridTemplateRows: "77px 1fr auto", minHeight: "100vh"}}>
+        <Box display="grid" style={{gridTemplateColumns: "1fr", gridTemplateRows: "77px 1fr auto"}} minHeight="100vh">
           <Header tab={tab} onDrawerToggle={handleDrawerToggle} />
-          <main className={clsx(classes.content, {[classes.contentShift]: open})} style={{marginTop: "20px"}}>
+          <Box component="main" mt={3} className={clsx(classes.content, {[classes.contentShift]: open})}>
             {children}
-          </main>
+          </Box>
           <Footer isOpen={open} classData={classes} siteTitle={data.site.siteMetadata?.title} />
         </Box>
       </ThemeProvider>
