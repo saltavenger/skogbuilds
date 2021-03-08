@@ -21,7 +21,7 @@ import "@fontsource/noto-serif"
 const theme = createMuiTheme({
   palette: {
     primary:{ 
-      main: '#234196'
+      main: '#6d2c2c'
     },
     secondary: {
       main: '#5d4e32'
@@ -34,55 +34,20 @@ const theme = createMuiTheme({
   typography: {
     fontFamily: "'Heebo', sans-serif",
     h1: {
-      fontFamily: "'Heebo', sans-serif",
       fontWeight: 600,
       fontSize: 28
     },
     h2: {
-      fontSize: 40,
-      fontFamily: "'Heebo', sans-serif",
+      fontSize: 40
     },
     h3: {
       fontSize: 20,
-      fontWeight: 600,
-      fontFamily: "'Heebo', sans-serif",
-    },
-    h4: {
-      fontFamily: "'Heebo', sans-serif",
-    },
-    h5: {
-      fontFamily: "'Heebo', sans-serif",
-    },
-    h6: {
-      fontFamily: "'Heebo', sans-serif",
-    },
-    subtitle1: {
-      fontFamily: "'Noto Serif', serif"
-    },
-    subtitle2: {
-      fontFamily: "'Noto Serif', serif"
-    },
-    body1: {
-      fontFamily: "'Noto Serif', serif"
-    },
-    body2: {
-      fontFamily: "'Noto Serif', serif",
-      fontSize: 12
-    },
-    button: {
-      fontFamily: "'Noto Serif', serif"
-    },
-    caption: {
-      fontFamily: "'Noto Serif', serif"
-    },
-    overline: {
-      fontFamily: "'Noto Serif', serif"
+      fontWeight: 600
     }
   },
   overrides: {
     MuiTab: {
       root: {
-        fontFamily: "'Heebo', sans-serif",
         fontSize: 18
       }
     },
@@ -93,8 +58,23 @@ const theme = createMuiTheme({
     },
     MuiLink: {
       root: {
-        fontFamily: "'Noto Serif', serif",
-        fontSize: 14
+        fontFamily: "'Heebo', sans-serif",
+        fontSize: 16
+      }
+    },
+    MuiCard: {
+      root: {
+        backgroundColor: "#ffffff"
+      }
+    },
+    MuiFormLabel: {
+      colorSecondary: {
+        color: "#1b1b1b"
+      }
+    },
+    MuiInputAdornment: {
+      root: {
+        color: "#b7b7b7"
       }
     }
   }

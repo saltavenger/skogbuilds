@@ -20,11 +20,11 @@ const useStyles = makeStyles((theme: Theme) =>
           height: '2px',
           width: '50%',
           transform: 'translateX(-50%)',
-          borderBottom: '2px solid #2c3a81'
+          borderBottom: '2px solid #6d2c2c'
         }
       },
       [theme.breakpoints.up('md')]: {
-        borderRight: '2px solid #2c3a81'
+        borderRight: '2px solid #6d2c2c'
       }
     }
   })
@@ -40,11 +40,17 @@ const IndexPage: React.FC<PageProps> = () => {
           <Container>
             <Typography variant="h2">Quality work for your home </Typography>
             <Box textAlign="left">
+              <Typography variant="body1">Bringing twenty years of experience in dockbuilding, concrete, &amp; union carpentry.</Typography>
               <Typography variant="h3">Services:</Typography>
               <ul>
                 <li><Typography variant="body1">Carpentry</Typography></li>
-                <li><Typography variant="body1">Remodeling</Typography></li>
-                <li><Typography variant="body1">Refinishing</Typography></li>
+                <li><Typography variant="body1">Framing</Typography></li>
+                <li><Typography variant="body1">Drywall</Typography></li>
+                <li><Typography variant="body1">Paint &amp; Spackle</Typography></li>
+                <li><Typography variant="body1">Flooring &amp; Tile</Typography></li>
+                <li><Typography variant="body1">Finish work</Typography></li>
+                <li><Typography variant="body1">Pressure washing</Typography></li>
+                <li><Typography variant="body1">...and more!</Typography></li>
               </ul>
             </Box>
           </Container>

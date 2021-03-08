@@ -12,7 +12,7 @@ const Footer = ({isOpen, classData, siteTitle}) => {
                 <Box p={2}>
                     <Box display="flex" justifyContent="flex-end" mb={2}>
                         <Box>
-                            <Box><Link color="textSecondary" href="tel:1-516-555-5555"><Phone style={{verticalAlign: 'middle'}} /> (516) 555-5555</Link></Box>
+                            <Box><Link color="textSecondary" href="tel:1-‭516-412-2640‬"><Phone style={{verticalAlign: 'middle'}} /> ‭(516) 412-2640‬</Link></Box>
                             <Box><Link color="textSecondary" href="mailto:info@skogbuilds.com"><Email style={{verticalAlign: 'middle'}} /> info@skogbuilds.com</Link></Box>
                         </Box>
                     </Box>
