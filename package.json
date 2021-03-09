@@ -23,7 +23,8 @@
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-helmet": "^6.1.0"
+    "react-helmet": "^6.1.0",
+    "whatwg-fetch": "^3.6.2"
   },
   "devDependencies": {
     "prettier": "2.2.1"
@@ -33,9 +34,7 @@
   ],
   "license": "0BSD",
   "scripts": {
-    "prebuild": "node ./getEnv.js",
     "build": "gatsby build",
-    "predevelop": "node ./getEnv.js",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "yarn run develop",
