@@ -16,7 +16,6 @@ import Header from "./header"
 import Footer from "./footer"
 import "./layout.css"
 import "@fontsource/heebo"
-import "@fontsource/noto-serif"
 
 const theme = createMuiTheme({
   palette: {

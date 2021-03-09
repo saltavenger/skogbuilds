@@ -1231,11 +1231,6 @@
   resolved "https://registry.yarnpkg.com/@fontsource/heebo/-/heebo-4.2.2.tgz#3339e3c235a0dd623d758158aade08b4495a0751"
   integrity sha512-ieMoc6VK2VPKKJQkF5oBjju5Mo0Ju0npsrX3oXreg78LfN71VtreZ1QW1vONhMoeLIfGW95fbvPcdL0ZY/KDmQ==
 
-"@fontsource/noto-serif@^4.2.1":
-  version "4.2.2"
-  resolved "https://registry.yarnpkg.com/@fontsource/noto-serif/-/noto-serif-4.2.2.tgz#727a35de76e9f0eee77c8c8cfd81279d743965a7"
-  integrity sha512-OwSHyUFLye3NfYyn2v9Ziq+s68n6nak/ul3Zb7AdDNjJuLgOwBACvklE6Rxj2bu768EcXSyRY623D/spy16T/Q==
-
 "@graphql-tools/batch-execute@^7.0.0":
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/@graphql-tools/batch-execute/-/batch-execute-7.0.0.tgz#e79d11bd5b39f29172f6ec2eafa71103c6a6c85b"
