@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `James Areskog Carpentry & Construction`,
@@ -27,9 +31,25 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
-    `gatsby-plugin-material-ui`
+    `gatsby-plugin-material-ui`,
+    `gatsby-plugin-layout`,
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+          spaceId: process.env.CONTENTFUL_SPACE_ID,
+          accessToken: process.env.CONTENTFUL_KEY
+      },
+    },
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
+        accessToken: process.env.CONTENTFUL_PREVIEW_KEY,
+        host: 'preview.contentful.com'
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
-}
+};

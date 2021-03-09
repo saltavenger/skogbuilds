@@ -1,32 +1,34 @@
 import * as functions from 'firebase-functions';
 import * as admin from 'firebase-admin';
-
 admin.initializeApp();
 
 // // Start writing Firebase Functions
 // // https://firebase.google.com/docs/functions/typescript
 //
-export const sendQuote = functions.https.onRequest(async(request, response) => {
-    await admin
+export const sendQuote = functions.https.onCall((data) => {
+    return admin
         .firestore()
         .collection("mail")
         .add({
             to: "info@skogbuilds.com",
-            from: request.body.email,
-            replyTo: request.body.email,
+            from: data.email,
+            replyTo: data.email,
             message: {
                 subject: "Quote for project",
-                html: `Name: ${request.body.name}<br />
-                    Phone: ${request.body.phone}<br />
-                    Contact Preference: ${request.body.contactType}<br />
-                    Project Description: ${request.body.description}`,
+                html: `<strong>Name:</strong> ${data.name}<br />
+                    <strong>Phone:</strong> ${data.phone}<br />
+                    <strong>Contact Preference:</strong> ${data.contactType}<br />
+                    <strong>Project Description:</strong ${data.description}`,
             },
         })
-        .then(() => {
-            response.status(200).send();
+        .then((result) => {
+            return result;
         })
         .catch((err) => {
-            response.status(500).send(err);
+            throw new functions.https.HttpsError('unknown', err);
         });
-    return;
+});
+
+export const getConfig = functions.https.onCall(() => {
+    return functions.config();
 });

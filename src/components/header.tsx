@@ -11,7 +11,7 @@ import {
 } from "@material-ui/core"
 import { Link, navigate } from "gatsby"
 import clsx from 'clsx';
-import { Menu, ChevronLeft, Home} from '@material-ui/icons'
+import { Menu, ChevronLeft} from '@material-ui/icons'
 import PropTypes from "prop-types"
 import React from "react"
 import {makeStyles, Theme, createStyles} from '@material-ui/core/styles'
