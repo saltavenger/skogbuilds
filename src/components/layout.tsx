@@ -27,7 +27,7 @@ const theme = createMuiTheme({
     },
     text: {
       primary: '#1b1b1b',
-      secondary: '#f8f6f2'
+      secondary: '#fff'
     }
   },
   typography: {
@@ -52,7 +52,7 @@ const theme = createMuiTheme({
     },
     MuiPaper: {
       root: {
-        backgroundColor: "#f8f6f2"
+        backgroundColor: "#fff"
       }
     },
     MuiLink: {
@@ -74,6 +74,11 @@ const theme = createMuiTheme({
     MuiInputAdornment: {
       root: {
         color: "#b7b7b7"
+      }
+    },
+    MuiRadio: {
+      root: {
+        color: '#b7b7b7'
       }
     }
   }

@@ -122,7 +122,7 @@ class Quote extends React.Component<IProps, IState> {
           <Typography variant="body1">Please describe the project to the best of your ability below or call <Link href="tel:1-‭516-412-2640‬">‭(516) 412-2640‬</Link>. We will respond within 24-48 hours.</Typography>
         </Box>
         <Box mt={2} mb={4}>
-          <Card>
+          <Card elevation={3}>
             <form>
               <Box p={2}>
                 <TextField id="name"

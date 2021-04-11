@@ -1,10 +1,16 @@
 import React from "react"
-import { PageProps } from "gatsby"
-import {Box, Container, Typography, Grid} from '@material-ui/core'
+import { graphql, PageProps } from "gatsby"
+import {Box, Container, Typography, Grid, Button, Card} from '@material-ui/core'
 import {makeStyles, Theme, createStyles} from '@material-ui/core/styles'
+import pic from '../images/atwork.jpeg';
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+
+function MainPic() {
+  // Import result is the URL of your image
+  return <img src={pic} />
+}
 
 const useStyles = makeStyles((theme: Theme) => 
   createStyles({
@@ -20,59 +26,90 @@ const useStyles = makeStyles((theme: Theme) =>
           height: '2px',
           width: '50%',
           transform: 'translateX(-50%)',
-          borderBottom: '2px solid #6d2c2c'
+          borderBottom: '2px solid white'
         }
       },
       [theme.breakpoints.up('md')]: {
-        borderRight: '2px solid #6d2c2c'
+        borderRight: '2px solid white'
       }
+    },
+    services: {
+      listStyleType: 'none'
+    },
+    service: {
+      fontFamily: "'Heebo', sans-serif",
+      textTransform: 'uppercase',
+      '&:last-child': {
+        listStyle: 'none'
+      }
+    },
+    gridCenter: {
+      fontWeight: 600,
+      textAlign: 'center',
+      alignSelf: 'center'
     }
   })
 );
 
-const IndexPage: React.FC<PageProps> = () => {
+const IndexPage: React.FC<PageProps> = ({data}) => {
   const classes = useStyles();
+  const mappedServices = data['allContentfulServices'].edges[0].node.services.map((service) => {
+    return service;
+  });
   return (
     <Layout>
       <SEO title="Home" />
-      <Box display="grid" style={{gridTemplateColumns: "1fr", gridTemplateRows: "1fr auto", gap: "16px"}} height="100%">
+      <Box display="grid" style={{gridTemplateColumns: "1fr", gridTemplateRows: "1fr auto"}} height="100%">
         <Box textAlign="center">
           <Container>
             <Typography variant="h2">Quality work for your home </Typography>
-            <Box textAlign="left">
-              <Typography variant="body1">Bringing twenty years of experience in dockbuilding, concrete, &amp; union carpentry.</Typography>
-              <Typography variant="h3">Services:</Typography>
-              <ul>
-                <li><Typography variant="body1">Carpentry</Typography></li>
-                <li><Typography variant="body1">Framing</Typography></li>
-                <li><Typography variant="body1">Drywall</Typography></li>
-                <li><Typography variant="body1">Paint &amp; Spackle</Typography></li>
-                <li><Typography variant="body1">Flooring &amp; Tile</Typography></li>
-                <li><Typography variant="body1">Finish work</Typography></li>
-                <li><Typography variant="body1">Pressure washing</Typography></li>
-                <li><Typography variant="body1">...and more!</Typography></li>
-              </ul>
+            <Box mt={3} mb={3}>
+              <Typography variant="body1">Twenty years of experience in dockbuilding, concrete, &amp; union carpentry to help bring your project to life.</Typography>
             </Box>
           </Container>
         </Box>
-        <Box bgcolor="#e2dbca" p={2}>
+        <Box bgcolor="#f7f4f4" p={2}>
+          <Container>
+            <Grid container>
+              <Grid item xs={12} sm={7}>
+                <MainPic></MainPic>
+              </Grid>
+              <Grid item xs={12} sm={5} className={classes.gridCenter}>
+                <Box>
+                  <ul className={classes.services}>
+                  { mappedServices.map((service, index) => {
+                        return (
+                          <li key={index} className={classes.service}>{service}</li>
+                        )
+                    })
+                  }
+                  </ul>
+                </Box>
+                <Box textAlign="center">
+                  <Button color="primary" variant="contained" type="button" style={{fontSize: "20px"}}>Get a quote</Button>
+                </Box>
+              </Grid>
+            </Grid>
+          </Container>
+        </Box>
+        <Box bgcolor="primary.main" p={2}>
           <Container>
             <Grid container spacing={3} style={{margin: 0, width: "100%"}}>
               <Grid item xs={12} md={6} className={classes.locationBorder}>
                 <Box component="p"
                     m={0}
+                    color="white"
                     textAlign={{xs: "center", md: "right"}}
                     fontFamily="'Heebo', sans-serif"
-                    color="primary.main"
                     fontWeight={600}
                     fontSize={30}>Based in Long Beach</Box>
               </Grid>
               <Grid item xs={12} md={6}>
                 <Box component="p"
                   m={0}
+                  color="white"
                   textAlign={{xs: "center", md: "left"}}
                   fontFamily="'Heebo', sans-serif"
-                  color="primary.main"
                   fontWeight={600}
                   fontSize={30}>Serving the NY Metro Area</Box>
               </Grid>
@@ -90,5 +127,16 @@ const IndexPage: React.FC<PageProps> = () => {
     </Layout>
   )
 }
+
+export const query = graphql`
+  query ServicesQuery {
+    allContentfulServices {
+      edges {
+        node {
+            services
+        }
+      }
+    }
+  }`;
 
 export default IndexPage
