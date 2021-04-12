@@ -1,15 +1,15 @@
 import React from "react"
 import { graphql, PageProps } from "gatsby"
-import {Box, Container, Typography, Grid, Button, Card} from '@material-ui/core'
+import { StaticImage } from "gatsby-plugin-image"
+import {Box, Container, Typography, Grid, Button} from '@material-ui/core'
 import {makeStyles, Theme, createStyles} from '@material-ui/core/styles'
-import pic from '../images/atwork.jpeg';
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 function MainPic() {
   // Import result is the URL of your image
-  return <img src={pic} />
+  return <StaticImage src="../images/atwork.jpeg" alt="project"></StaticImage>
 }
 
 const useStyles = makeStyles((theme: Theme) => 
