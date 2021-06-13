@@ -14,11 +14,10 @@ jobs:
       - name: INSTALL
         run: yarn install --frozen-lockfile
       - name: BUILD
-        with:
-          env: # Or as an environment variable
-            CONTENTFUL_KEY: ${{ secrets.CONTENTFUL_KEY }}
-            CONTENTFUL_PREVIEW_KEY: ${{ secrets.CONTENTFUL_PREVIEW_KEY }}
-            CONTENTFUL_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
+        env:
+          CONTENTFUL_KEY: ${{ secrets.CONTENTFUL_KEY }}
+          CONTENTFUL_PREVIEW_KEY: ${{ secrets.CONTENTFUL_PREVIEW_KEY }}
+          CONTENTFUL_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
         run: yarn build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
